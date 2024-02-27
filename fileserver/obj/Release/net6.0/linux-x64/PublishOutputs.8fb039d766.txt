@@ -1,0 +1,15 @@
+C:\Users\Tharindu  Kumesh\source\repos\fileserver\fileserver\bin\Release\net6.0\publish\fileserver.deps.json
+C:\Users\Tharindu  Kumesh\source\repos\fileserver\fileserver\bin\Release\net6.0\publish\fileserver.runtimeconfig.json
+C:\Users\Tharindu  Kumesh\source\repos\fileserver\fileserver\bin\Release\net6.0\publish\fileserver.pdb
+C:\Users\Tharindu  Kumesh\source\repos\fileserver\fileserver\bin\Release\net6.0\publish\Amazon.Extensions.CognitoAuthentication.dll
+C:\Users\Tharindu  Kumesh\source\repos\fileserver\fileserver\bin\Release\net6.0\publish\Amazon.Lambda.APIGatewayEvents.dll
+C:\Users\Tharindu  Kumesh\source\repos\fileserver\fileserver\bin\Release\net6.0\publish\Amazon.Lambda.Core.dll
+C:\Users\Tharindu  Kumesh\source\repos\fileserver\fileserver\bin\Release\net6.0\publish\Amazon.Lambda.Serialization.SystemTextJson.dll
+C:\Users\Tharindu  Kumesh\source\repos\fileserver\fileserver\bin\Release\net6.0\publish\AWSSDK.CognitoIdentity.dll
+C:\Users\Tharindu  Kumesh\source\repos\fileserver\fileserver\bin\Release\net6.0\publish\AWSSDK.CognitoIdentityProvider.dll
+C:\Users\Tharindu  Kumesh\source\repos\fileserver\fileserver\bin\Release\net6.0\publish\AWSSDK.Core.dll
+C:\Users\Tharindu  Kumesh\source\repos\fileserver\fileserver\bin\Release\net6.0\publish\AWSSDK.DynamoDBv2.dll
+C:\Users\Tharindu  Kumesh\source\repos\fileserver\fileserver\bin\Release\net6.0\publish\AWSSDK.S3.dll
+C:\Users\Tharindu  Kumesh\source\repos\fileserver\fileserver\bin\Release\net6.0\publish\AWSSDK.SecurityToken.dll
+C:\Users\Tharindu  Kumesh\source\repos\fileserver\fileserver\bin\Release\net6.0\publish\Newtonsoft.Json.dll
+C:\Users\Tharindu  Kumesh\source\repos\fileserver\fileserver\bin\Release\net6.0\publish\fileserver.dll
