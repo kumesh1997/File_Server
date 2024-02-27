@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "dgSpecHash": "Onp6WM5ezRDJZwqioD5BXPKFsvqGWST/7FvhkA8N4wntyBxNMSl3jLyK9rPP3BSuDLWeZKowrzsuXdZHyUUDFw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Tharindu  Kumesh\\source\\repos\\fileserver\\fileserver\\fileserver.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Tharindu  Kumesh\\.nuget\\packages\\amazon.extensions.cognitoauthentication\\2.5.2\\amazon.extensions.cognitoauthentication.2.5.2.nupkg.sha512",
+    "C:\\Users\\Tharindu  Kumesh\\.nuget\\packages\\amazon.lambda.apigatewayevents\\2.7.0\\amazon.lambda.apigatewayevents.2.7.0.nupkg.sha512",
+    "C:\\Users\\Tharindu  Kumesh\\.nuget\\packages\\amazon.lambda.core\\2.2.0\\amazon.lambda.core.2.2.0.nupkg.sha512",
+    "C:\\Users\\Tharindu  Kumesh\\.nuget\\packages\\amazon.lambda.serialization.systemtextjson\\2.4.0\\amazon.lambda.serialization.systemtextjson.2.4.0.nupkg.sha512",
+    "C:\\Users\\Tharindu  Kumesh\\.nuget\\packages\\awssdk.cognitoidentity\\3.7.0.2\\awssdk.cognitoidentity.3.7.0.2.nupkg.sha512",
+    "C:\\Users\\Tharindu  Kumesh\\.nuget\\packages\\awssdk.cognitoidentityprovider\\3.7.302.1\\awssdk.cognitoidentityprovider.3.7.302.1.nupkg.sha512",
+    "C:\\Users\\Tharindu  Kumesh\\.nuget\\packages\\awssdk.core\\3.7.302.6\\awssdk.core.3.7.302.6.nupkg.sha512",
+    "C:\\Users\\Tharindu  Kumesh\\.nuget\\packages\\awssdk.dynamodbv2\\3.7.301.7\\awssdk.dynamodbv2.3.7.301.7.nupkg.sha512",
+    "C:\\Users\\Tharindu  Kumesh\\.nuget\\packages\\awssdk.s3\\3.7.305.22\\awssdk.s3.3.7.305.22.nupkg.sha512",
+    "C:\\Users\\Tharindu  Kumesh\\.nuget\\packages\\awssdk.securitytoken\\3.7.0.2\\awssdk.securitytoken.3.7.0.2.nupkg.sha512",
+    "C:\\Users\\Tharindu  Kumesh\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\Tharindu  Kumesh\\.nuget\\packages\\microsoft.netcore.app.runtime.linux-x64\\6.0.18\\microsoft.netcore.app.runtime.linux-x64.6.0.18.nupkg.sha512",
+    "C:\\Users\\Tharindu  Kumesh\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.linux-x64\\6.0.18\\microsoft.aspnetcore.app.runtime.linux-x64.6.0.18.nupkg.sha512",
+    "C:\\Users\\Tharindu  Kumesh\\.nuget\\packages\\microsoft.netcore.app.crossgen2.win-x64\\6.0.18\\microsoft.netcore.app.crossgen2.win-x64.6.0.18.nupkg.sha512"
+  ],
+  "logs": []
+}
