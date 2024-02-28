@@ -21,7 +21,8 @@ namespace fileserver.Services
         private readonly DynamoDBContext _dynamoDbContext;
         public FileUpload()
         {
-            _s3Client = new AmazonS3Client(RegionEndpoint.USEast1);
+            _s3Client = new AmazonS3Client();
+            //_s3Client = new AmazonS3Client(RegionEndpoint.USEast1);
             _dynamoDbContext = new DynamoDBContext(new AmazonDynamoDBClient());
         }
 
@@ -43,7 +44,7 @@ namespace fileserver.Services
                 },
                 };
             }
-            if (httpMethod == "POST")
+            if (httpMethod == "POST" )
             {
                 return await HandleUploadRequest(request);
             }
@@ -56,65 +57,52 @@ namespace fileserver.Services
         {
             try
             {
-                // Check if the request contains a file
                 if (request.IsBase64Encoded && !string.IsNullOrEmpty(request.Body))
                 {
                     // Decode base64 content
-                    //byte[] fileBytes = Convert.FromBase64String(request.Body);
-                    // Convert the request body to a byte array
-                    byte[] fileBytes = Encoding.UTF8.GetBytes(request.Body);
+                    byte[] fileBytes = Convert.FromBase64String(request.Body);
 
                     // Get other details such as file name, S3 bucket name, etc., from the request or headers
                     string fileName = request.QueryStringParameters?["fileName"];
                     string bucketName = "cloud-file-server-bucket";
-                    string s3Key = "fileName"; // S3 key where the file will be stored
+                    string s3Key = $"uploads/{fileName}"; // S3 key where the file will be stored
 
                     // Upload the file to S3
                     using (MemoryStream stream = new MemoryStream(fileBytes))
                     {
                         var fileTransferUtility = new TransferUtility(_s3Client);
-                        await fileTransferUtility.UploadAsync(stream, bucketName, s3Key);
+                        fileTransferUtility.Upload(stream, bucketName, s3Key);
                     }
 
-                    // Get the S3 object URL
-                    var objectUrl = GenerateS3ObjectUrl(bucketName, s3Key);
-
-                    //// Save in DB
-                    //FileDetails fd = new FileDetails();
-                    //fd.FileName = fileName;
-                    //fd.FileExtension = "html";
-                    //fd.CreatedDate = Date.Cu;
-                    //fd.LastModifiedDate = "";
-                    //fd.FileURL = "";
-                    //fd.UserId = "";
-
                     // Construct a response
-                    var response = new APIGatewayHttpApiV2ProxyResponse
+                    return new APIGatewayHttpApiV2ProxyResponse
                     {
                         StatusCode = 200,
-                        Body = $"File {objectUrl} uploaded successfully",
+                        Body = "File uploaded successfully",
                         Headers = new Dictionary<string, string> { { "Content-Type", "text/plain" } }
                     };
-
-                    return response;
                 }
                 else
                 {
+                    // If the request doesn't contain a file, return an error response
                     return new APIGatewayHttpApiV2ProxyResponse
                     {
                         StatusCode = 400,
-                        Body = "File issue"
+                        Body = "Invalid file content",
+                        Headers = new Dictionary<string, string> { { "Content-Type", "text/plain" } }
                     };
                 }
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
                 return new APIGatewayHttpApiV2ProxyResponse
                 {
                     StatusCode = 400,
-                    Body = ex.StackTrace
+                    Body = $"Exception {ex.Message}",
+                    Headers = new Dictionary<string, string> { { "Content-Type", "text/plain" } }
                 };
             }
+            
         }
 
      
