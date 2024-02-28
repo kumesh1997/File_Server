@@ -12,11 +12,13 @@ public class Function
     private readonly FileUpload fileUpload;
     private readonly Authentication authentication;
     private readonly VerificationService verificationService;
+    private readonly FileService fileService;
     public Function()
     {
         fileUpload = new FileUpload();
         authentication = new Authentication();
         verificationService = new VerificationService();
+        fileService = new FileService();
     }
     public async Task<APIGatewayHttpApiV2ProxyResponse> FileUploadHandler(APIGatewayHttpApiV2ProxyRequest request, ILambdaContext context)
     {
@@ -30,5 +32,10 @@ public class Function
     public async Task<APIGatewayHttpApiV2ProxyResponse> VerificationHandler(APIGatewayHttpApiV2ProxyRequest request, ILambdaContext context)
     {
         return await verificationService.VerificationFunctionHandler(request, context);
+    }
+
+    public async Task<APIGatewayHttpApiV2ProxyResponse> GetAllFileServiceHandler(APIGatewayHttpApiV2ProxyRequest request, ILambdaContext context)
+    {
+        return await fileService.FileServiceFunctionHandler(request, context);
     }
 }
