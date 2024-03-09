@@ -19,6 +19,7 @@ namespace fileserver.Services
     {
         private readonly IAmazonS3 _s3Client;
         private readonly DynamoDBContext _dynamoDbContext;
+        string bucketName = "cloud-file-server-bucket";
         public FileUpload()
         {
             _s3Client = new AmazonS3Client();
@@ -44,7 +45,7 @@ namespace fileserver.Services
                 },
                 };
             }
-            if (httpMethod == "POST" )
+            if (httpMethod == "POST")
             {
                 return await HandleUploadRequest(request);
             }
@@ -64,10 +65,9 @@ namespace fileserver.Services
 
                     // Get other details such as file name, S3 bucket name, etc., from the request or headers
                     string fileName = request.QueryStringParameters?["fileName"];
-                    string bucketName = "cloud-file-server-bucket";
                     string s3Key = $"uploads/{fileName}"; // S3 key where the file will be stored
 
-                    // Upload the file to S3
+                    //Upload the file to S3
                     using (MemoryStream stream = new MemoryStream(fileBytes))
                     {
                         var fileTransferUtility = new TransferUtility(_s3Client);
@@ -78,7 +78,7 @@ namespace fileserver.Services
                     return new APIGatewayHttpApiV2ProxyResponse
                     {
                         StatusCode = 200,
-                        Body = "File uploaded successfully",
+                        Body = $"File {fileName} uploaded successfully",
                         Headers = new Dictionary<string, string> { { "Content-Type", "text/plain" } }
                     };
                 }
@@ -143,5 +143,7 @@ namespace fileserver.Services
 
             return key;
         }
+
+       
     }
 }

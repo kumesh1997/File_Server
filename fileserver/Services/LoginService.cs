@@ -12,6 +12,10 @@ using Amazon.Lambda.Core;
 using Amazon.CognitoIdentityProvider.Model;
 using fileserver.DTO;
 using System.Text.Json;
+using System.IdentityModel.Tokens.Jwt;
+using Microsoft.IdentityModel.Tokens;
+using System.Security.Claims;
+using System.Security.Cryptography;
 
 namespace fileserver.Services
 {
@@ -94,10 +98,35 @@ namespace fileserver.Services
                     var accessToken = authenticationResponse.AuthenticationResult.AccessToken;
                     var refreshToken = authenticationResponse.AuthenticationResult.RefreshToken;
 
+                    // Parse the JWT token to extract claims
+                    var handler = new JwtSecurityTokenHandler();
+                    var token = handler.ReadJwtToken(accessToken);
+
+                    // Retrieve the user's role (in this case, hardcoding it as "user")
+                    var userRole = "user";
+
+                    var key = new byte[256 / 8]; // 128 bits / 8 bits per byte
+                    RandomNumberGenerator.Create().GetBytes(key);
+
+
+                    // Create JWT token
+                    var tokenDescriptor = new SecurityTokenDescriptor
+                    {
+                        Subject = new ClaimsIdentity(new[]
+                        {
+                                new Claim("email", userDto.Email), // Add email as a claim
+                                new Claim("role", userRole) // Add role as a claim
+                            }),
+                        Expires = DateTime.UtcNow.AddHours(1), // Set token expiration
+                        SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+                    };
+                    var jwtToken = handler.CreateToken(tokenDescriptor);
+                    var encodedJwtToken = handler.WriteToken(jwtToken);
+
                     return new APIGatewayHttpApiV2ProxyResponse
                     {
                         StatusCode = 200,
-                        Body = $"Sign-in successful. Access Token: {accessToken}, Refresh Token: {refreshToken}",
+                        Body = $"Sign-in successful. Access Token: {encodedJwtToken}, Refresh Token: {refreshToken}",
                     };
                 }
                 else

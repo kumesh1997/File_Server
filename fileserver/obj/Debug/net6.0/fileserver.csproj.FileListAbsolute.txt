@@ -24,3 +24,8 @@ C:\Users\Tharindu  Kumesh\source\repos\fileserver\fileserver\bin\Debug\net6.0\AW
 C:\Users\Tharindu  Kumesh\source\repos\fileserver\fileserver\bin\Debug\net6.0\Amazon.Extensions.CognitoAuthentication.dll
 C:\Users\Tharindu  Kumesh\source\repos\fileserver\fileserver\bin\Debug\net6.0\AWSSDK.CognitoIdentity.dll
 C:\Users\Tharindu  Kumesh\source\repos\fileserver\fileserver\bin\Debug\net6.0\AWSSDK.SecurityToken.dll
+C:\Users\Tharindu  Kumesh\source\repos\fileserver\fileserver\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Tharindu  Kumesh\source\repos\fileserver\fileserver\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Tharindu  Kumesh\source\repos\fileserver\fileserver\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Tharindu  Kumesh\source\repos\fileserver\fileserver\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Tharindu  Kumesh\source\repos\fileserver\fileserver\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll

@@ -14,6 +14,10 @@ public class Function
     private readonly VerificationService verificationService;
     private readonly FileService fileService;
     private readonly LoginService loginService;
+    private readonly SaveFileinDB saveFileinDB;
+    private readonly StaredService staredService;
+    private readonly TrashService trshService;
+    private readonly GetAllStared getallstared;
     public Function()
     {
         fileUpload = new FileUpload();
@@ -21,6 +25,10 @@ public class Function
         verificationService = new VerificationService();
         fileService = new FileService();
         loginService = new LoginService();
+        saveFileinDB = new SaveFileinDB();
+        staredService = new StaredService();
+        trshService = new TrashService();
+        getallstared = new GetAllStared();
     }
     public async Task<APIGatewayHttpApiV2ProxyResponse> FileUploadHandler(APIGatewayHttpApiV2ProxyRequest request, ILambdaContext context)
     {
@@ -45,5 +53,26 @@ public class Function
     public async Task<APIGatewayHttpApiV2ProxyResponse> LoginServiceHandler(APIGatewayHttpApiV2ProxyRequest request, ILambdaContext context)
     {
         return await loginService.SignInFunctionHandler(request, context);
+    }
+
+
+    public async Task<APIGatewayHttpApiV2ProxyResponse> SaveFiletoDBServiceHandler(APIGatewayHttpApiV2ProxyRequest request, ILambdaContext context)
+    {
+        return await saveFileinDB.SaveFileFunctionHandler(request, context);
+    }
+
+    public async Task<APIGatewayHttpApiV2ProxyResponse> StaredServiceHandler(APIGatewayHttpApiV2ProxyRequest request, ILambdaContext context)
+    {
+        return await staredService.StaredFunctionHandler(request, context);
+    }
+
+    public async Task<APIGatewayHttpApiV2ProxyResponse> TrashServiceHandler(APIGatewayHttpApiV2ProxyRequest request, ILambdaContext context)
+    {
+        return await trshService.TrashedFunctionHandler(request, context);
+    }
+
+    public async Task<APIGatewayHttpApiV2ProxyResponse> GetAllTrashServiceHandler(APIGatewayHttpApiV2ProxyRequest request, ILambdaContext context)
+    {
+        return await getallstared.GetAllStaredFunctionHandler(request, context);
     }
 }

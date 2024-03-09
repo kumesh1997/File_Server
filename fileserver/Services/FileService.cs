@@ -45,6 +45,10 @@ namespace fileserver.Services
             {
                 return await GetAllFiles(request);
             }
+            else if (httpMethod == "GET" && request.Body == null && request.PathParameters != null)
+            {
+                return await GetFilesOfaUser(request);
+            }
             // Handle unsupported or unrecognized HTTP methods
             return new APIGatewayHttpApiV2ProxyResponse { StatusCode = 400 };
         }
@@ -78,6 +82,42 @@ namespace fileserver.Services
             }
         }
 
+        private async Task<APIGatewayHttpApiV2ProxyResponse> GetFilesOfaUser(APIGatewayHttpApiV2ProxyRequest request)
+        {
+            try
+            {
+                // Get Respected Condo ID
+                request.PathParameters.TryGetValue("Id", out var Id);
+                var Files = await _dynamoDbContext.ScanAsync<FileDetails>(default).GetRemainingAsync();
+                var UserFiles = Files.Where(v => v.UserId.Equals(Id) && v.Trash != true).ToList();
+                if (UserFiles != null && UserFiles.Count > 0)
+                {
+                    return new APIGatewayHttpApiV2ProxyResponse()
+                    {
+                        Body = JsonSerializer.Serialize(UserFiles),
+                        StatusCode = 200
+                    };
+                }
+                else
+                {
+                    return new APIGatewayHttpApiV2ProxyResponse()
+                    {
+                        Body = "No Files Found !!! ",
+                        StatusCode = 405
+                    };
+                }
+            }
+            catch (Exception ex)
+            {
+                return new APIGatewayHttpApiV2ProxyResponse()
+                {
+                    // The counted value of each category is included in the response body 
+                    Body = $"Exception {ex.Message}",
+                    StatusCode = 200
+                };
+            }
+        }
+
         // OK Response
         private static APIGatewayHttpApiV2ProxyResponse OkResponse() =>
             new APIGatewayHttpApiV2ProxyResponse()
@@ -94,5 +134,6 @@ namespace fileserver.Services
                 StatusCode = 404
             };
         }
+
     }
 }

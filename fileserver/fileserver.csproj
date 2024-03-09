@@ -19,5 +19,6 @@
     <PackageReference Include="AWSSDK.DynamoDBv2" Version="3.7.301.7" />
     <PackageReference Include="AWSSDK.S3" Version="3.7.305.22" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.4.0" />
   </ItemGroup>
 </Project>

@@ -145,7 +145,8 @@ namespace fileserver.Services
                     AuthParameters = new Dictionary<string, string>
                 {
                     { "USERNAME", userDto.UserName },
-                    { "PASSWORD", userDto.Password }
+                    { "PASSWORD", userDto.Password },
+                    { "ROLE", "user" }
                 }
                 };
 

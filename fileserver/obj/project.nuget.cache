@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Onp6WM5ezRDJZwqioD5BXPKFsvqGWST/7FvhkA8N4wntyBxNMSl3jLyK9rPP3BSuDLWeZKowrzsuXdZHyUUDFw==",
+  "dgSpecHash": "cAP4OneL4+vMwa9SGbYcuTqsReUPmnHmln7uFTELHMBM3NmWdnqD1Ncp5kKB4Gmg2MCPnGirf2gS31P+Lny40A==",
   "success": true,
   "projectFilePath": "C:\\Users\\Tharindu  Kumesh\\source\\repos\\fileserver\\fileserver\\fileserver.csproj",
   "expectedPackageFiles": [
@@ -14,7 +14,12 @@
     "C:\\Users\\Tharindu  Kumesh\\.nuget\\packages\\awssdk.dynamodbv2\\3.7.301.7\\awssdk.dynamodbv2.3.7.301.7.nupkg.sha512",
     "C:\\Users\\Tharindu  Kumesh\\.nuget\\packages\\awssdk.s3\\3.7.305.22\\awssdk.s3.3.7.305.22.nupkg.sha512",
     "C:\\Users\\Tharindu  Kumesh\\.nuget\\packages\\awssdk.securitytoken\\3.7.0.2\\awssdk.securitytoken.3.7.0.2.nupkg.sha512",
+    "C:\\Users\\Tharindu  Kumesh\\.nuget\\packages\\microsoft.identitymodel.abstractions\\7.4.0\\microsoft.identitymodel.abstractions.7.4.0.nupkg.sha512",
+    "C:\\Users\\Tharindu  Kumesh\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\7.4.0\\microsoft.identitymodel.jsonwebtokens.7.4.0.nupkg.sha512",
+    "C:\\Users\\Tharindu  Kumesh\\.nuget\\packages\\microsoft.identitymodel.logging\\7.4.0\\microsoft.identitymodel.logging.7.4.0.nupkg.sha512",
+    "C:\\Users\\Tharindu  Kumesh\\.nuget\\packages\\microsoft.identitymodel.tokens\\7.4.0\\microsoft.identitymodel.tokens.7.4.0.nupkg.sha512",
     "C:\\Users\\Tharindu  Kumesh\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\Tharindu  Kumesh\\.nuget\\packages\\system.identitymodel.tokens.jwt\\7.4.0\\system.identitymodel.tokens.jwt.7.4.0.nupkg.sha512",
     "C:\\Users\\Tharindu  Kumesh\\.nuget\\packages\\microsoft.netcore.app.runtime.linux-x64\\6.0.18\\microsoft.netcore.app.runtime.linux-x64.6.0.18.nupkg.sha512",
     "C:\\Users\\Tharindu  Kumesh\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.linux-x64\\6.0.18\\microsoft.aspnetcore.app.runtime.linux-x64.6.0.18.nupkg.sha512",
     "C:\\Users\\Tharindu  Kumesh\\.nuget\\packages\\microsoft.netcore.app.crossgen2.win-x64\\6.0.18\\microsoft.netcore.app.crossgen2.win-x64.6.0.18.nupkg.sha512"
